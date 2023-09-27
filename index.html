@@ -363,6 +363,11 @@ worktriadacommunity@gmail.com
             const termsContainer = document.getElementById('terms-container');
             termsContainer.innerHTML = languages[language].text;
         }
+		
+        const userLanguage = navigator.language || navigator.userLanguage;
+        if (languages[userLanguage]) {
+            changeLanguage(userLanguage);
+        }
     </script>
 </body>
 </html>
