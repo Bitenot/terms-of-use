@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms Of Service</title>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -19,43 +19,45 @@
         }
 
         .container {
-            text-align: center;
+            text-align: left;
             max-width: 600px;
             padding: 20px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #65EFCF; /* Цвет рамки */
+            padding: 20px; /* Поля внутри рамки */
         }
 
         .title {
             font-size: 24px;
             font-weight: bold;
+            text-align: center;
             margin-bottom: 20px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            margin: 0 10px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .button:hover {
-            background-color: #2980b9;
         }
 
         .terms {
             font-size: 14px;
+        }
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .language-button {
+            padding: 10px 20px;
+            border-radius: 35%;
+            border: none;
+            background-color: #65EFCF;
+            color: white;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .language-button:hover {
+            background-color: #4cd7b5;
         }
     </style>
 </head>
@@ -64,14 +66,305 @@
         <div class="title">
             Terms Of Service
         </div>
-        <div class="button-container">
-            <button class="button">Agree</button>
-            <button class="button">Disagree</button>
+        <div class="terms" id="terms-container">
+            <!-- Первоначально текст на английском -->
+            <p>
+                You may not copy, modify, distribute or reproduce any part of the bot's code, design or functionality without being its developer or owner.
+As a beta tester you are also not allowed to distribute information about upcoming updates and other confidential information.
+You are allowed to distribute the bot in the form of advertising (if it does not violate other rules of use).
+            </p>
+			<p>
+			<b> Use of the bot: </b>
+			</p>
+			<p>
+			You may not attempt to reverse analyze, decompile or disassemble the bot or any part of it.
+It is forbidden to use bot features that violate community rules.
+			</p>
+			<p>
+			<b>Compliance with Discord Rules:</b>
+			</p>
+			<p>
+			You may not misuse the bot in violation of Discord's Rules of Conduct and Terms of Use or applicable laws and regulations.
+			</p>
+			<p>
+			<b>Disclaimer:</b>
+			</p>
+			<p>
+			Developer is not responsible for any loss or damage incurred while using the bot. 
+			</p>
+			<p>
+			<b>Modifications and Termination:</b>
+			</p>
+			<p>
+			We strive to provide stable and reliable operation of our bot. We will notify users of any significant changes to the functionality of the bot.
+			</p>
+			<p>
+			<b>Data Collection:</b>
+			</p>
+			<p>
+			RulesBot may collect and store bot usage data for analytical purposes.
+			</p>
+			<p>
+			If you violate the Terms of Use, you will be disqualified from using the bot and its features in any way for any purpose. 
+			</p>
+			<p>
+			<b>Support:</b>
+			If you violate the Terms of Use, you will be disqualified from using the bot and its features in any way for any purpose. 
+Tech-support: if you have noticed errors in the bot's work or want to consider cooperation options, write to support: 
+worktriadacommunity@gmail.com
+			</p>
+            
+            <!-- ... (другие пункты) ... -->
         </div>
-        <div class="terms">
-            <!-- Ваши условия здесь -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <div class="language-buttons">
+            <button class="language-button" onclick="changeLanguage('en')">English(USA)</button>
+            <button class="language-button" onclick="changeLanguage('ru')">Русский</button>
+            <button class="language-button" onclick="changeLanguage('uk')">Українська</button>
+            <button class="language-button" onclick="changeLanguage('fr')">Français</button>
+            <button class="language-button" onclick="changeLanguage('pt')">Português</button>
         </div>
     </div>
+
+    <script>
+        const languages = {
+            'en': {
+                text: `
+            <p>
+                You may not copy, modify, distribute or reproduce any part of the bot's code, design or functionality without being its developer or owner.
+As a beta tester you are also not allowed to distribute information about upcoming updates and other confidential information.
+You are allowed to distribute the bot in the form of advertising (if it does not violate other rules of use).
+            </p>
+			<p>
+			<b> Use of the bot: </b>
+			</p>
+			<p>
+			You may not attempt to reverse analyze, decompile or disassemble the bot or any part of it.
+It is forbidden to use bot features that violate community rules.
+			</p>
+			<p>
+			<b>Compliance with Discord Rules:</b>
+			</p>
+			<p>
+			You may not misuse the bot in violation of Discord's Rules of Conduct and Terms of Use or applicable laws and regulations.
+			</p>
+			<p>
+			<b>Disclaimer:</b>
+			</p>
+			<p>
+			Developer is not responsible for any loss or damage incurred while using the bot. 
+			</p>
+			<p>
+			<b>Modifications and Termination:</b>
+			</p>
+			<p>
+			We strive to provide stable and reliable operation of our bot. We will notify users of any significant changes to the functionality of the bot.
+			</p>
+			<p>
+			<b>Data Collection:</b>
+			</p>
+			<p>
+			RulesBot may collect and store bot usage data for analytical purposes.
+			</p>
+			If you violate the Terms of Use, you will be disqualified from using the bot and its features in any way for any purpose. 
+			<p>
+			<b>Support:</b>
+			If you violate the Terms of Use, you will be disqualified from using the bot and its features in any way for any purpose. 
+Tech-support: if you have noticed errors in the bot's work or want to consider cooperation options, write to support: 
+worktriadacommunity@gmail.com
+			</p>
+                `
+            },
+            'ru': {
+                text: `
+            <p>
+                Запрещается копировать, изменять, распространять или воспроизводить любую часть кода, дизайна или функциональности бота, не являясь его разработчиком или владельцем.
+В качестве бета-тестера вы также не имеете права распространять информацию о предстоящих обновлениях и другую конфиденциальную информацию.
+Разрешается распространять бот в виде рекламы (если это не нарушает другие правила использования).
+            </p>
+			<p>
+			<b> Использование бота: </b>
+			</p>
+			<p>
+			Запрещается предпринимать попытки обратного анализа, декомпиляции или дизассемблирования бота или любой его части.
+Запрещено использовать функции бота, нарушающие правила сообщества.
+			</p>
+			<p>
+			<b>Соблюдение правил Discord:</b>
+			</p>
+			<p>
+			Запрещается использовать бот в нарушение Правил поведения и Условий использования Discord, а также применимых законов и нормативных актов.
+			</p>
+			<p>
+			<b>Отказ от ответственности:</b>
+			</p>
+			<p>
+			Разработчик не несет ответственности за любые убытки или ущерб, понесенные при использовании бота.  
+			</p>
+			<p>
+			<b>Изменения и прекращение работы:</b>
+			</p>
+			<p>
+			Мы стремимся обеспечить стабильную и надежную работу нашего бота. Мы будем уведомлять пользователей о любых существенных изменениях в функциональности бота.
+			</p>
+			<p>
+			<b>Сбор данных:</b>
+			</p>
+			<p>
+			RulesBot может собирать и хранить данные об использовании бота в аналитических целях.
+			</p>
+			<p>
+			Если вы нарушите Условия использования, вы будете лишены права использовать бот и его функции в любых целях. 
+			</p>
+			<p>
+			<b>Техподдержка:</b>
+			Если вы заметили ошибки в работе бота или хотите рассмотреть варианты сотрудничества, напишите в службу поддержки: 
+worktriadacommunity@gmail.com
+			</p>
+                `
+            },
+            'uk': {
+                text: `
+            <p>
+                Ви не можете копіювати, змінювати, поширювати або відтворювати будь-яку частину коду, дизайну або функціональності бота, не будучи його розробником або власником.
+Як бета-тестер ви також не маєте права поширювати інформацію про майбутні оновлення та іншу конфіденційну інформацію.
+Ви можете поширювати бота у вигляді реклами (якщо це не порушує інших правил використання).
+            </p>
+			<p>
+			<b> Використання бота: </b>
+			</p>
+			<p>
+			Забороняється здійснювати зворотний аналіз, декомпіляцію або дизасемблювання бота або будь-якої його частини.
+Заборонено використовувати функції бота, які порушують правила спільноти.
+			</p>
+			<p>
+			<b>Дотримання Правил Discord</b>
+			</p>
+			<p>
+			Ви не можете зловживати ботом, порушуючи Правила поведінки та Умови використання Discord або чинне законодавство.
+			</p>
+			<p>
+			<b>Відмова від відповідальності:</b>
+			</p>
+			<p>
+			Розробник не несе відповідальності за будь-які втрати або пошкодження, понесені під час використання бота. 
+			</p>
+			<p>
+			<b>Модифікації та припинення:</b>
+			</p>
+			<p>
+			Ми прагнемо забезпечити стабільну та надійну роботу нашого бота. Ми будемо повідомляти користувачів про будь-які суттєві зміни у функціоналі бота.
+			</p>
+			<p>
+			<b>Збір даних</b>
+			</p>
+			<p>
+			RulesBot може збирати і зберігати дані про використання бота в аналітичних цілях.
+			</p>
+			Якщо ви порушите Умови використання, ви будете позбавлені права використовувати бота і його функції будь-яким чином і з будь-якою метою. 
+			<p>
+			<b>Технічна підтримка:</b>
+			Якщо ви помітили помилки в роботі бота або хочете розглянути варіанти співпраці, напишіть в підтримку: 
+worktriadacommunity@gmail.com
+			</p>
+                `
+            },
+            'fr': {
+                text: `
+                    <p>
+                Vous ne pouvez pas copier, modifier, distribuer ou reproduire toute partie du code, de la conception ou de la fonctionnalité du robot sans en être le développeur ou le propriétaire.
+En tant que bêta-testeur, vous n'êtes pas non plus autorisé à distribuer des informations sur les mises à jour à venir et d'autres informations confidentielles.
+Vous êtes autorisé à distribuer le robot sous forme de publicité (si cela n'enfreint pas d'autres règles d'utilisation).
+            </p>
+			<p>
+			<b> Utilisation du robot : </b>
+			</p>
+			<p>
+			Il est interdit d'essayer d'analyser à rebours, de décompiler ou de désassembler le robot ou toute partie de celui-ci.
+Il est interdit d'utiliser des fonctionnalités du bot qui violent les règles de la communauté.
+			</p>
+			<p>
+			<b>Respect des règles de Discord :</b>
+			</p>
+			<p>
+			Vous ne pouvez pas utiliser le bot en violation des règles de conduite et des conditions d'utilisation de Discord ou des lois et règlements applicables.
+			<p>
+			<b>Clause de non-responsabilité :</b>
+			</p>
+			<p>
+			Le développeur n'est pas responsable des pertes ou dommages encourus lors de l'utilisation du bot.  
+			</p>
+			<p>
+			<b>Modifications et résiliation :</b>
+			</p>
+			<p>
+			Nous nous efforçons de fournir un fonctionnement stable et fiable de notre bot. Nous informerons les utilisateurs de toute modification importante apportée à la fonctionnalité du robot.
+			</p>
+			<p>
+			<b>Collecte de données :</b>
+			</p>
+			<p>
+			RulesBot peut collecter et stocker des données d'utilisation du robot à des fins d'analyse.
+			</p>
+			Si vous ne respectez pas les conditions d'utilisation, vous ne pourrez plus utiliser le robot et ses fonctions, de quelque manière que ce soit et à quelque fin que ce soit. 
+			<p>
+			<b>Support:</b>
+			Si vous avez remarqué des erreurs dans le travail du robot ou si vous souhaitez envisager des options de coopération, écrivez à support : 
+worktriadacommunity@gmail.com
+			</p>
+                `
+            },
+            'pt': {
+                text: `
+            <p>
+                Não é permitido copiar, modificar, distribuir ou reproduzir qualquer parte do código, design ou funcionalidade do bot sem ser o seu criador ou proprietário.
+Como beta tester, também não é permitido distribuir informações sobre as próximas actualizações e outras informações confidenciais.
+É permitido distribuir o bot sob a forma de publicidade (se não violar outras regras de utilização).
+            </p>
+			<p>
+			<b> Utilização do bot: </b>
+			</p>
+			<p>
+			Não é permitido tentar reverter a análise, descompilar ou desmontar o bot ou qualquer parte dele.
+É proibido usar características do bot que violem as regras da comunidade.
+			</p>
+			<p>
+			<b>Conformidade com as regras do Discord:</b>
+			</p>
+			<p>
+			O utilizador não pode utilizar indevidamente o bot em violação das Regras de Conduta e Termos de Utilização do Discord ou das leis e regulamentos aplicáveis.
+			</p>
+			<p>
+			<b>Isenção de responsabilidade:</b>
+			</p>
+			<p>
+			O desenvolvedor não é responsável por qualquer perda ou dano incorrido ao usar o bot. 
+			</p>
+			<p>
+			<b>Modificações e Rescisão:</b>
+			</p>
+			<p>
+			Nós nos esforçamos para fornecer uma operação estável e confiável do nosso bot. Iremos notificar os utilizadores de quaisquer alterações significativas à funcionalidade do bot.
+			</p>
+			<p>
+			<b>Coleta de dados:</b>
+			</p>
+			<p>
+			RulesBot pode coletar e armazenar dados de uso do bot para fins analíticos.
+			</p>
+			Se o utilizador violar os Termos de Utilização, será desqualificado de usar o bot e as suas funcionalidades de qualquer forma e para qualquer fim. 
+			<p>
+			<b>Suporte técnico:</b>
+			Se tiver notado erros no trabalho do bot ou quiser considerar opções de cooperação, escreva para o suporte: 
+worktriadacommunity@gmail.com
+			</p>
+                `
+            }
+        };
+
+        function changeLanguage(language) {
+            const termsContainer = document.getElementById('terms-container');
+            termsContainer.innerHTML = languages[language].text;
+        }
+    </script>
 </body>
 </html>
